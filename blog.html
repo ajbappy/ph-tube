@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH Tube Blog</title>
+    <link rel="icon" type="image/x-icon" href="./img/fav.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="max-w-[1440px] mx-auto px-5">
+    <main>
+      <section>
+        <!-- questios  -->
+        <div
+          class="flex flex-col md:flex-row gap-5 items-center justify-center mt-5"
+        >
+          <a href="#var" class="btn border-black bg-red-400 text-white">
+            Discuss the scope
+          </a>
+          <a href="#null" class="btn border-black bg-red-400 text-white">
+            the use cases of null and undefined
+          </a>
+          <a href="#api" class="btn border-black bg-red-400 text-white">
+            What do you mean by REST API?
+          </a>
+        </div>
+
+        <!-- blogs  -->
+
+        <!-- var let const  -->
+        <div id="var">
+          <h2 class="text-3xl font-bold text-center mt-5 md:mt-10 bg-red-400">
+            Var, Let, and Const – What's the Difference?
+          </h2>
+          <div class="mt-10">
+            <span class="text-xl font-bold"
+              >A lot of shiny new features came out with ES2015 (ES6). And now,
+              since it's 2020, it's assumed that a lot of JavaScript developers
+              have become familiar with and have started using these
+              features.</span
+            >
+            <p>
+              While this assumption might be partially true, it's still possible
+              that some of these features remain a mystery to some devs. One of
+              the features that came with ES6 is the addition of let and const,
+              which can be used for variable declaration. The question is, what
+              makes them different from good ol' var which we've been using? If
+              you are still not clear about this, then this article is for you.
+              In this article, we'll discuss var, let and const with respect to
+              their scope, use, and hoisting. As you read, take note of the
+              differences between them that I'll point out.
+            </p>
+          </div>
+          <div>
+            <div class="mt-10 mb-10 flex flex-col gap-5">
+              <h2 class="text-2xl font-bold">1. Problem with var</h2>
+              <p>
+                There's a weakness that comes with var. I'll use the example
+                below to explain:
+              </p>
+              <img src="./img/Screenshot_1.png" alt="" />
+              <p class="mt-5">
+                So, since times > 3 returns true, greeter is redefined to "say
+                Hello instead". While this is not a problem if you knowingly
+                want greeter to be redefined, it becomes a problem when you do
+                not realize that a variable greeter has already been defined
+                before. If you have used greeter in other parts of your code,
+                you might be surprised at the output you might get. This will
+                likely cause a lot of bugs in your code. This is why let and
+                const are necessary.
+              </p>
+            </div>
+            <div class="mt-10 mb-10 flex flex-col gap-5">
+              <h2 class="text-2xl font-bold">2. Let</h2>
+              <p class="text-base font-bold">
+                let is now preferred for variable declaration. It's no surprise
+                as it comes as an improvement to var declarations. It also
+                solves the problem with var that we just covered. Let's consider
+                why this is so.
+              </p>
+              <h2 class="text-2xl font-bold mt-5">let is block scoped</h2>
+              <p class="mb-5">
+                A block is a chunk of code bounded by {}. A block lives in curly
+                braces. Anything within curly braces is a block. So a variable
+                declared in a block with let is only available for use within
+                that block. Let me explain this with an example:
+              </p>
+              <img src="./img/Screenshot_2.png" alt="" />
+            </div>
+            <div class="mt-10 mb-10 flex flex-col gap-5">
+              <h2 class="text-2xl font-bold">3. Const</h2>
+              <p class="text-base font-bold">
+                Variables declared with the const maintain constant values.
+                const declarations share some similarities with let
+                declarations.
+              </p>
+              <h2 class="text-2xl font-bold mt-5">
+                const cannot be updated or re-declared
+              </h2>
+              <p class="mb-5">
+                This means that the value of a variable declared with const
+                remains the same within its scope. It cannot be updated or
+                re-declared. So if we declare a variable with const, we can
+                neither do this:
+              </p>
+              <img src="./img/Screenshot_3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- null undifine  -->
+        <div id="null">
+          <h2 class="text-3xl font-bold text-center mt-5 md:mt-10 bg-red-400">
+            Var, Let, and Const – What's the Difference?
+          </h2>
+          <div class="mt-10 mb-10 flex flex-col gap-5">
+            <h2 class="text-2xl font-bold mt-5 md:mt-10">
+              Introduction to undefined and null values
+            </h2>
+            <p>
+              Many times we often get confused on what the difference between
+              UNDEFINED and NULL is. Simply put, undefined means a variable has
+              been declared but has not yet been assigned a value. undefined is
+              a type by itself (undefined). Unassigned variables are initialized
+              by JavaScript with a default value of undefined.
+            </p>
+            <img src="./img/Screenshot_4.png" alt="" class="mt-5 mb-10" />
+            <h2 class="text-xl font-bold">
+              Undefined vs null - the differences
+            </h2>
+            <p>
+              The data type of undefined is undefined whereas that of null is
+              object. We can find the datatypes of both undefined and null using
+              the typeof operator.
+            </p>
+            <img src="./img/Screenshot_5.png" alt="" />
+            <p>
+              When used in arithmetic operations, undefined will result in NaN
+              (not a number), whereas null will be converted to 0 behind the
+              screens.
+            </p>
+            <img src="./img/Screenshot_6.png" alt="" />
+            <h2 class="text-xl font-bold">Undefined and null are falsy:</h2>
+            <p>
+              Here the boolean double negation operator aka the bang bang
+              operator is used to check the boolean equivalent of a value.
+            </p>
+            <img src="./img/Screenshot_7.png" alt="" />
+            <h2 class="text-xl font-bold">Why is Null an object?</h2>
+            <p>
+              As promised, now let’s look as to why the type of null is an
+              “object”. As it then indicates that null must be an object, which
+              is not true. In fact, null is one of the primitive values in
+              JavaScript. It is actually a bug in the language and unfortunately
+              can’t be fixed that easily, as it will break the existing
+              codebase. However, there is actually one logical explanation
+              behind why null is an object in javascript. In the initial version
+              of JavaScript, values were stored in 32 bit units. The first 3
+              bits represented the data type tag followed by the remaining bits
+              that represented the value. For all objects it was 000 as the type
+              tag bits. null was considered to be a special value in JavaScript
+              from its very first version. null was a representation of the null
+              pointer. However, there were no pointers in JavaScript like C. So
+              null simply meant nothing or void and was represented by all 0’s.
+              Hence all its 32 bits were 0’s. So whenever the JavaScrit
+              interpreter reads null, it considers the first 3 bits as type
+              “object”. That is why typeof null returns “object”.
+            </p>
+          </div>
+        </div>
+        <!-- api -->
+        <div id="api">
+          <h2 class="text-3xl font-bold text-center mt-5 md:mt-10 bg-red-400">
+            What do you mean by REST API?
+          </h2>
+
+          <div class="mt-10 mb-10 flex flex-col gap-5">
+            <h2 class="text-2xl font-bold">
+              Representational State Transfer (REST) is an architectural style
+              that defines a set of constraints to be used for creating web
+              services. REST API is a way of accessing web services in a simple
+              and flexible way without having any processing.
+            </h2>
+            <img src="./img/Screenshot_8.png" alt="" />
+            <p>
+              REST technology is generally preferred to the more robust Simple
+              Object Access Protocol (SOAP) technology because REST uses less
+              bandwidth, simple and flexible making it more suitable for
+              internet usage. It’s used to fetch or give some information from a
+              web service. All communication done via REST API uses only HTTP
+              request. Working: A request is sent from client to server in the
+              form of a web URL as HTTP GET or POST or PUT or DELETE request.
+              After that, a response comes back from the server in the form of a
+              resource which can be anything like HTML, XML, Image, or JSON. But
+              now JSON is the most popular format being used in Web Services.
+            </p>
+            <img src="./img/Screenshot_9.png" alt="" />
+            <p>
+              In HTTP there are five methods that are commonly used in a
+              REST-based Architecture i.e., POST, GET, PUT, PATCH, and DELETE.
+              These correspond to create, read, update, and delete (or CRUD)
+              operations respectively. There are other methods which are less
+              frequently used like OPTIONS and HEAD.<br />
+
+              <strong> GET:</strong> The HTTP GET method is used to read (or
+              retrieve) a representation of a resource. In the safe path, GET
+              returns a representation in XML or JSON and an HTTP response code
+              of 200 (OK). In an error case, it most often returns a 404 (NOT
+              FOUND) or 400 (BAD REQUEST).<br />
+              <strong> POST:</strong> The POST verb is most often utilized to
+              create new resources. In particular, it’s used to create
+              subordinate resources. That is, subordinate to some other (e.g.
+              parent) resource. On successful creation, return HTTP status 201,
+              returning a Location header with a link to the newly-created
+              resource with the 201 HTTP status.
+            </p>
+            <p>
+              <strong> PUT:</strong> It is used for updating the capabilities.
+              However, PUT can also be used to create a resource in the case
+              where the resource ID is chosen by the client instead of by the
+              server. In other words, if the PUT is to a URI that contains the
+              value of a non-existent resource ID. On successful update, return
+              200 (or 204 if not returning any content in the body) from a PUT.
+              If using PUT for create, return HTTP status 201 on successful
+              creation. PUT is not safe operation but it’s idempotent.<br />
+              <strong> PATCH:</strong> It is used to modify capabilities. The
+              PATCH request only needs to contain the changes to the resource,
+              not the complete resource. This resembles PUT, but the body
+              contains a set of instructions describing how a resource currently
+              residing on the server should be modified to produce a new
+              version. This means that the PATCH body should not just be a
+              modified part of the resource, but in some kind of patch language
+              like JSON Patch or XML Patch. PATCH is neither safe nor
+              idempotent.<br />
+              <strong> DELETE: </strong>It is used to delete a resource
+              identified by a URI. On successful deletion, return HTTP status
+              200 (OK) along with a response body.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH Tube</title>
+    <link rel="icon" type="image/x-icon" href="./img/fav.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="max-w-[1440px] mx-auto px-5">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown md:hidden">
+            <label tabindex="0" class="btn btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex flex-col gap-2"
+            >
+              <button
+                onclick="handleSortByViewsClick()"
+                class="btn bg-[rgba(37, 37, 37, 0.20)]"
+              >
+                Sort By Views
+              </button>
+              <a href="blog.html" class="btn bg-red-600 text-white">Blog</a>
+            </ul>
+          </div>
+          <a class="btn btn-ghost normal-case text-2xl lg:text-4xl"
+            ><img src="./img/logo.png" alt=""
+          /></a>
+        </div>
+
+        <div class="navbar-center hidden md:flex">
+          <button
+            onclick="handleSortByViewsClick()"
+            class="btn bg-[rgba(37, 37, 37, 0.20)]"
+          >
+            Sort By Views
+          </button>
+        </div>
+        <div class="navbar-end text-end hidden md:block">
+          <a href="blog.html" class="btn bg-red-600 text-white">Blog</a>
+        </div>
+      </div>
+      <hr />
+    </header>
+    <main class="max-w-[1440px] mx-auto px-5">
+      <div
+        id="catagory-btn"
+        class="flex flex-row justify-center items-center gap-2 lg:gap-5 mb-10"
+      ></div>
+      <!-- cards  -->
+      <div
+        class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+        id="card-container"
+      >
+        <!-- items   -->
+      </div>
+      <!-- no media -->
+
+      <div id="no-data" class="flex flex-col items-center text-center hidden">
+        <div class="text-center">
+          <img src="./img/no-media.png" alt="" class="" />
+        </div>
+        <h2 class="text-5xl font-bold leading-[60px]">
+          Oops!! Sorry, There is no<br />
+          content here
+        </h2>
+      </div>
+      <!-- div script > innerHTML img + text -->
+    </main>
+
+    <!-- js links  -->
+    <script src="./script.js"></script>
+  </body>
+</html>
